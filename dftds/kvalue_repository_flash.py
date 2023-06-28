@@ -1,5 +1,5 @@
 import ujson
-from kvalue_repository import KValueRepository
+from dftds.kvalue_repository import KValueRepository
 
 
 class KValueRepositoryFlash(KValueRepository):
