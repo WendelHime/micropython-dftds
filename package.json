@@ -1,13 +1,9 @@
 {
   "urls": [
-    ["dftds/__init__.py",
-	 "github:WendelHime/micropython-dftds/dftds/__init__.py"],
-    ["dftds/tds.py",
-	 "github:WendelHime/micropython-dftds/dftds/tds.py"]
-    ["dftds/kvalue_repository.py",
-	 "github:WendelHime/micropython-dftds/dftds/kvalue_repository.py"]
-    ["dftds/kvalue_repository_flash.py",
-	 "github:WendelHime/micropython-dftds/dftds/kvalue_repository_flash.py"]
+    ["dftds/__init__.py", "github:WendelHime/micropython-dftds/dftds/__init__.py"],
+    ["dftds/tds.py", "github:WendelHime/micropython-dftds/dftds/tds.py"],
+    ["dftds/kvalue_repository.py", "github:WendelHime/micropython-dftds/dftds/kvalue_repository.py"],
+    ["dftds/kvalue_repository_flash.py", "github:WendelHime/micropython-dftds/dftds/kvalue_repository_flash.py"]
   ], 
   "version": "0.0.1"
 }
