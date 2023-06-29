@@ -4,8 +4,7 @@ This project was created with the purpose to implement an equivalent of github.c
 import machine
 import ujson
 
-from kvalue_repository import KValueRepository
-from kvalue_repository_flash import KValueRepositoryFlash
+from dftds.kvalue_repository import KValueRepository
 
 
 TDS_FACTOR = 0.5
