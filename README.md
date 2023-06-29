@@ -11,6 +11,6 @@ pip3 install -r requirements.txt
 ## Testing
 
 ```bash
-python3 -m unittest tests/*
+micropython -m unittest tests/*
 ```
 
