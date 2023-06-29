@@ -30,6 +30,7 @@ class GravityTDS:
         self.k_value_repository = k_value_repository
         # by default we're assuming the sensor is K=1
         self.k_value = 1.0
+        self.calibrated = False
 
     def begin(self):
         """
@@ -44,6 +45,8 @@ class GravityTDS:
         """
         try:
             self.k_value = self.k_value_repository.read()
+            if self.k_value != 1.0:
+                self.calibrated = True
         except OSError as e:
             print(f"file not found, creating k_value as 1.0 {e}")
             self.k_value = 1.0
@@ -83,6 +86,7 @@ class GravityTDS:
         if raw_ecs_solution > 0 and raw_ecs_solution < 2000 and k_value_temp > 0.25 and k_value_temp < 4.0:
             self.k_value = k_value_temp
             self.store_k_values()
+            self.calibrated = True
             return
         print("failed to calibrate")
 
