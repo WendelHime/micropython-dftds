@@ -3,6 +3,7 @@ This project was created with the purpose to implement an equivalent of github.c
 """
 import machine
 import ujson
+import time
 
 from dftds.kvalue_repository import KValueRepository
 
@@ -65,8 +66,13 @@ class GravityTDS:
         """
         update retrieve a sample from the sensor and calculate the TDS
         """
-        analog_value = self.sensor.read_u16()
-        self.voltage = analog_value/self.adc_range*self.aref
+        analog_values = []
+        for i in range(0, 10):
+            analog_value = self.sensor.read_u16()
+            analog_values.append(analog_value)
+            time.sleep(0.01)
+        avg_analog_value = sum(analog_values)/len(analog_values)
+        self.voltage = avg_analog_value/self.adc_range*self.aref
         ec_value = calculate_ec(self.voltage, self.k_value)
         # temperature compensation
         ec_value_25 = ec_value / (1.0+0.02*(self.temperature-25.0))
